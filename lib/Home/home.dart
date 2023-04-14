@@ -22,13 +22,13 @@ class HomePage extends StatelessWidget {
                       width: 40,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage("assets/images/avtar.png"),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Column(
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                               color: Color(ColorsValue().h5),
                               fontSize: 14,
                             )),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         InkWell(
@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Column(
@@ -69,7 +69,7 @@ class HomePage extends StatelessWidget {
                                   color: Color(ColorsValue().h5),
                                   fontSize: 14,
                                 )),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Text("Safe Location",
@@ -79,7 +79,7 @@ class HomePage extends StatelessWidget {
                                 )),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Icon(
@@ -92,7 +92,7 @@ class HomePage extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 64,
             ),
             Text(
@@ -103,7 +103,7 @@ class HomePage extends StatelessWidget {
                   color: Color(ColorsValue().h1),
                   fontWeight: FontWeight.w600),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -125,7 +125,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Text(
@@ -135,13 +135,13 @@ class HomePage extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
+                SizedBox(
                     width: 170,
                     height: 130,
                     child: Card(
@@ -154,7 +154,7 @@ class HomePage extends StatelessWidget {
                               "assets/images/police_badge.png",
                               height: 40,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Text(
@@ -164,11 +164,11 @@ class HomePage extends StatelessWidget {
                                   fontSize: 18,
                                   fontWeight: FontWeight.w600),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Text(
-                              "call 100 ",
+                              "call 100",
                               style: TextStyle(
                                 color: Color(ColorsValue().h5),
                                 fontSize: 16,
@@ -178,7 +178,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     )),
-                Container(
+                SizedBox(
                     width: 170,
                     height: 130,
                     child: Card(
@@ -191,7 +191,7 @@ class HomePage extends StatelessWidget {
                               "assets/images/police_badge.png",
                               height: 40,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Text(
@@ -201,7 +201,7 @@ class HomePage extends StatelessWidget {
                                   fontSize: 18,
                                   fontWeight: FontWeight.w600),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Text(
