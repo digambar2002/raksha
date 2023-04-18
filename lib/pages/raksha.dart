@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:raksha/Home/home.dart';
 import 'package:raksha/tools/tools.dart';
 import 'package:raksha/utils/colors.dart';
+import 'package:raksha/Map/map.dart';
 
 class Raksha extends StatefulWidget {
+  const Raksha({super.key});
+
   @override
   State<Raksha> createState() => _RakshaState();
 }
@@ -12,7 +15,7 @@ class Raksha extends StatefulWidget {
 class _RakshaState extends State<Raksha> {
   List pages = [
     const HomePage(),
-    const Text("Map"),
+    const MapScreen(),
     const Text("Bot"),
     const ToolsPage(),
     const Text("Community"),
