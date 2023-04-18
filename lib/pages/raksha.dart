@@ -1,6 +1,7 @@
 import 'package:boxicons/boxicons.dart';
 import 'package:flutter/material.dart';
 import 'package:raksha/Home/home.dart';
+import 'package:raksha/tools/tools.dart';
 import 'package:raksha/utils/colors.dart';
 
 class Raksha extends StatefulWidget {
@@ -13,7 +14,7 @@ class _RakshaState extends State<Raksha> {
     const HomePage(),
     const Text("Map"),
     const Text("Bot"),
-    const Text("Tools"),
+    const ToolsPage(),
     const Text("Community"),
   ];
 
