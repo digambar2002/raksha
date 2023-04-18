@@ -1,6 +1,7 @@
 import 'package:boxicons/boxicons.dart';
 import 'package:flutter/material.dart';
 import 'package:raksha/Home/home.dart';
+import 'package:raksha/tools/tools.dart';
 import 'package:raksha/utils/colors.dart';
 import 'package:raksha/Map/map.dart';
 
@@ -16,7 +17,7 @@ class _RakshaState extends State<Raksha> {
     const HomePage(),
     const MapScreen(),
     const Text("Bot"),
-    const Text("Tools"),
+    const ToolsPage(),
     const Text("Community"),
   ];
 
