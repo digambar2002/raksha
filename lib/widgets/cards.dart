@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/colors.dart';
 
+// Home Card
 class HelpLineCards extends StatelessWidget {
   String title;
   String number;
@@ -49,6 +50,36 @@ class HelpLineCards extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ToolsCard extends StatelessWidget {
+  String title;
+  String imageurl;
+  ToolsCard({super.key, required this.title, required this.imageurl});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 150,
+      height: 150,
+      child: Card(
+        color: Colors.white,
+        elevation: 35,
+        //shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(40)),
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Image.asset(
+                imageurl,
+              ),
+              Text(title, style: TextStyle(fontSize: 20)),
             ],
           ),
         ),
