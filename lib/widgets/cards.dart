@@ -18,7 +18,7 @@ class HelpLineCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 170,
+      width: 160,
       height: 130,
       child: Card(
         child: Padding(
@@ -66,11 +66,11 @@ class ToolsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 150,
-      height: 150,
+      width: 180,
+      height: 180,
       child: Card(
         color: Colors.white,
-        elevation: 35,
+        elevation: 5,
         //shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(40)),
         child: Padding(
           padding: EdgeInsets.all(16.0),
@@ -78,11 +78,71 @@ class ToolsCard extends StatelessWidget {
             children: [
               Image.asset(
                 imageurl,
+                height: 60,
               ),
-              Text(title, style: TextStyle(fontSize: 20)),
+              SizedBox(height: 10),
+              Text(title, style: TextStyle(fontSize: 16)),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+
+class CardWithBackgroundImage extends StatelessWidget {
+  final String title;
+  final String description;
+  final String imagePath;
+
+  CardWithBackgroundImage({required this.title, required this.description, required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Stack(
+        children: [
+          // Background image
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: 200,
+            ),
+          ),
+          // Card content
+          Padding(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  description,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
