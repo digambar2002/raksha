@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:raksha/Home/home.dart';
 import 'package:raksha/utils/colors.dart';
 
+import '../community/community.dart';
+
 class Raksha extends StatefulWidget {
   @override
   State<Raksha> createState() => _RakshaState();
@@ -14,7 +16,7 @@ class _RakshaState extends State<Raksha> {
     const Text("Map"),
     const Text("Bot"),
     const Text("Tools"),
-    const Text("Community"),
+    const CommunityPage(),
   ];
 
   var _currentIndex = 0;
