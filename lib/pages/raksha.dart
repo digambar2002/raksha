@@ -4,6 +4,9 @@ import 'package:raksha/Home/home.dart';
 import 'package:raksha/tools/tools.dart';
 import 'package:raksha/utils/colors.dart';
 
+import '../Map/map.dart';
+import '../community/community.dart';
+
 class Raksha extends StatefulWidget {
   @override
   State<Raksha> createState() => _RakshaState();
@@ -12,10 +15,10 @@ class Raksha extends StatefulWidget {
 class _RakshaState extends State<Raksha> {
   List pages = [
     const HomePage(),
-    const Text("Map"),
+    const MapPage(),
     const Text("Bot"),
     const ToolsPage(),
-    const Text("Community"),
+    const CommunityPage(),
   ];
 
   var _currentIndex = 0;
@@ -24,11 +27,8 @@ class _RakshaState extends State<Raksha> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-        child: Center(
-          child: pages[_currentIndex],
-        ),
+      body: Center(
+        child: pages[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
