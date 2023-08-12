@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:raksha/Home/home.dart';
 import 'package:raksha/pages/raksha.dart';
 import 'package:raksha/utils/colors.dart';
-import 'package:raksha/utils/routes.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(

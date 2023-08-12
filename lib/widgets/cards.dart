@@ -18,38 +18,55 @@ class HelpLineCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 160,
-      height: 130,
+      width: 170,
+      height: 110,
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset(
-                assetImg,
-                height: 40,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    assetImg,
+                    height: 30,
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: TextStyle(
+                          color: Color(ColorsValue().h1),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+
+                  // Text(
+                  //   "call $number",
+                  //   style: TextStyle(
+                  //     color: Color(ColorsValue().h5),
+                  //     fontSize: 16,
+                  //   ),
+                  // ),
+                ],
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
-                title,
-                style: TextStyle(
-                    color: Color(ColorsValue().h1),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Text(
-                "call $number",
-                style: TextStyle(
-                  color: Color(ColorsValue().h5),
-                  fontSize: 16,
-                ),
-              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Icon(
+                    Icons.arrow_forward_rounded,
+                    color: Colors.red,
+                  )
+                ],
+              )
             ],
           ),
         ),
@@ -90,13 +107,15 @@ class ToolsCard extends StatelessWidget {
   }
 }
 
-
 class CardWithBackgroundImage extends StatelessWidget {
   final String title;
   final String description;
   final String imagePath;
 
-  CardWithBackgroundImage({required this.title, required this.description, required this.imagePath});
+  CardWithBackgroundImage(
+      {required this.title,
+      required this.description,
+      required this.imagePath});
 
   @override
   Widget build(BuildContext context) {

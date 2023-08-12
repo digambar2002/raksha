@@ -1,6 +1,8 @@
+import 'package:android_path_provider/android_path_provider.dart';
 import 'package:boxicons/boxicons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:raksha/models/sos.dart';
 import 'package:raksha/utils/colors.dart';
 import 'package:raksha/widgets/cards.dart';
 
@@ -12,7 +14,7 @@ class HomePage extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(10.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -100,10 +102,10 @@ class HomePage extends StatelessWidget {
                 height: 64,
               ),
               Text(
-                "Emergency help Needed?",
+                "Emergency help \n Needed?",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 30,
                     color: Color(ColorsValue().h1),
                     fontWeight: FontWeight.w600),
               ),
@@ -114,15 +116,23 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                 child: Material(
                   elevation: 8,
-                  borderRadius: BorderRadius.circular(200),
+                  borderRadius: BorderRadius.circular(400),
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   child: InkWell(
                     splashColor: Colors.black54,
-                    onTap: () {},
+                    onTap: () async {
+                      var downloadsPath =
+                          await AndroidPathProvider.downloadsPath;
+                      print(downloadsPath + "/ironman.jpeg");
+
+                      SOS().sharePhotoToWhatsApp("7620464305",
+                          "http://file:/" + downloadsPath + "/digambar.jpeg");
+                      print("file:/" + downloadsPath + "/digambar.jpeg");
+                    },
                     child: Ink.image(
                       image: const AssetImage('assets/images/sos_button.png'),
-                      height: 225,
-                      width: 225,
+                      height: 205,
+                      width: 205,
                       fit: BoxFit.cover,
                       child: const Center(),
                     ),
@@ -145,18 +155,24 @@ class HomePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                InkWell(
-                  onTap:() {
-                      _callNumber("7620464305");                  
-                  },
-                  child: HelpLineCards(title: "Police Helpline", assetImg: "assets/images/police_badge.png", number: "100",)),
-                
-                InkWell(
-                   onTap:() {
-                      _callNumber("9307227317");                  
-                  },
-                  child: HelpLineCards(title: "Women Helpline", assetImg: "assets/images/girl_badge.png", number: "100",))  
-
+                  InkWell(
+                      onTap: () {
+                        _callNumber("7620464305");
+                      },
+                      child: HelpLineCards(
+                        title: "Police 100",
+                        assetImg: "assets/images/police_badge.png",
+                        number: "100",
+                      )),
+                  InkWell(
+                      onTap: () {
+                        _callNumber("9307227317");
+                      },
+                      child: HelpLineCards(
+                        title: "Womens Helpline",
+                        assetImg: "assets/images/girl_badge.png",
+                        number: "100",
+                      ))
                 ],
               )
             ],
@@ -165,8 +181,9 @@ class HomePage extends StatelessWidget {
       ),
     ));
   }
-  _callNumber(String number) async{
+
+  _callNumber(String number) async {
 //set the number here
-  bool? res = await FlutterPhoneDirectCaller.callNumber(number);
-}
+    bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+  }
 }
