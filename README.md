@@ -1,6 +1,6 @@
 # Raksha: Women Safety App
 
-![Raksha Logo](/path/to/logo.png)
+![Raksha Logo](https://github.com/digambar2002/raksha/blob/master/assets/images/raksha.png)
 
 Raksha is a dedicated women safety app developed using Flutter, designed to empower women and provide them with tools to enhance their safety and security. With its intuitive interface and powerful features, Raksha aims to create a safer environment for women everywhere.
 
